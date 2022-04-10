@@ -6,6 +6,7 @@ namespace _8_queens
     class Program
     {
         private static CheckerService checker = CheckerService.GetInstance();
+        private static VisualizeService visualize = VisualizeService.GetInstance();
         private static int count = 0;
         static void Main(string[] args)
         {
@@ -36,11 +37,12 @@ namespace _8_queens
                     
                 if (checker.IsAllGood(layout))
                 {
-                    foreach (var item in layout.queens)
-                    {
-                        Console.Write(item.place[1].ToString() + " ");
-                    }
-                    Console.Write("\n");
+                    //foreach (var item in layout.queens)
+                    //{
+                    //    Console.Write(item.place[1].ToString() + " ");
+                    //}
+                    //Console.Write("\n");
+                    visualize.PrintToConsole(layout);
                     count++;
                 }
             }
