@@ -8,12 +8,13 @@ namespace _8_queens
         private static CheckerService checker = CheckerService.GetInstance();
         private static VisualizeService visualize = VisualizeService.GetInstance();
         private static int count = 0;
+        private static string tablesContent = "";
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
             GetCombinations(arr, 0, arr.Length-1);
-            Console.WriteLine("Solutions: "+count.ToString());
+            Console.WriteLine("This problem has {0} individual solutions.",count.ToString());
+            visualize.TemplateHandler(tablesContent);
             
         }
 
@@ -42,7 +43,9 @@ namespace _8_queens
                     //    Console.Write(item.place[1].ToString() + " ");
                     //}
                     //Console.Write("\n");
+                    Console.WriteLine("There is a solution: ");
                     visualize.PrintToConsole(layout);
+                    tablesContent += visualize.CreateHtml(layout);
                     count++;
                 }
             }
