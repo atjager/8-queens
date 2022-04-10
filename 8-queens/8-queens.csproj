@@ -14,4 +14,12 @@
     <Folder Include="model\" />
     <Folder Include="service\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="assets\template.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\table.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
