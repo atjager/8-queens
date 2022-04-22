@@ -4,6 +4,7 @@ using System.IO;
 
 namespace _8_queens
 {
+    //singleton osztály, minden példányosításkor ugyanazzal a példányal tér vissza, adatot nem tárol, csak a methdóusok a lényeg
     public sealed class VisualizeService
     {
         
@@ -18,6 +19,7 @@ namespace _8_queens
             return _instance;
         }
 
+        //console-ra írja a megoldásokat
         public void PrintToConsole(Layout layout)
         {
             int i = 0;
@@ -29,6 +31,7 @@ namespace _8_queens
             Console.Write("\n\n");
         }
 
+        //minden egyes megoldásról készít egy HTML struktúrát -> látványosan vizualizálja a megoldásokat
         public string CreateHtml(Layout layout)
         {
             int i = 0;
@@ -43,6 +46,7 @@ namespace _8_queens
             return table;
         }
 
+        //fájlba írja megoldásokat
         public void TemplateHandler(string tablesContent)
         {
             string template = File.ReadAllText("assets/template.html");
